@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Config\\": "src"
+            "lefuturiste\\config\\": "src"
         }
     }
 }

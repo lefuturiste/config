@@ -1,15 +1,16 @@
 <?php
-namespace Config;
+namespace lefuturiste\config;
 
 class Config
 {
+	public $config;
 	/**
 	 * Get all configs keys
 	 *
 	 * @param string $dir (slash is required)
 	 * @return mixed
 	 */
-	public static function get($dir = __DIR__ . '/config/', $envFilePath = false)
+	public function __construct($dir = __DIR__ . '/config/', $envFilePath = false)
 	{
 		if (!$envFilePath) {
 			$envFilePath = dirname(__DIR__);
@@ -26,12 +27,12 @@ class Config
 		//include it in the config array
 		$i = 0;
 		$config = [];
-		while ($i < count($allConfigFiles)){
+		while ($i < count($allConfigFiles)) {
 			$config = array_merge($config, include $dir . $allConfigFiles[$i]);
 			$i++;
 		}
 
 		//finish and return
-		return $config;
+		$this->config = $config;
 	}
 }

@@ -36,5 +36,5 @@ The second params of config class is path of your .env file (just directory, no 
 ### Get config array
 
 ```
-$configArray = \Config\Config::get();
+$configArray = new \lefuturiste\config\Config(dirname(__DIR__) . '/App/config/', dirname(__DIR__));
 ```

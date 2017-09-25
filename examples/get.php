@@ -2,7 +2,4 @@
 
 require '../vendor/autoload.php';
 
-$configArray = \Config\Config::get();
-
-
-$configArray2 = \Config\Config::get('config');
+$configArray = new \lefuturiste\config\Config(dirname(__DIR__) . '/App/config/', dirname(__DIR__))
